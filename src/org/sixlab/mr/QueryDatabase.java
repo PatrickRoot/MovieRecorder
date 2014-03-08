@@ -20,7 +20,7 @@ public class QueryDatabase
 		try
 		{
 			Class.forName("org.sqlite.JDBC");
-			conn = DriverManager.getConnection("jdbc:sqlite:sawmovies.db");
+			conn = DriverManager.getConnection("jdbc:sqlite:records.db");
 		} catch (Exception e)
 		{
 			e.printStackTrace();

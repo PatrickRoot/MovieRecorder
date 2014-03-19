@@ -102,7 +102,7 @@ public class MainLoop extends JFrame {
 		title.add("日期");
 		content = new Vector<Vector<String>>();
 		JScrollPane jScrollPane = new JScrollPane();
-		content = new Vector<>();
+//		content = new Vector<>();
 		QueryDatabase.queryFilm("", "", "", "", content);
 		gloabID = "";
 		gloabName = "";

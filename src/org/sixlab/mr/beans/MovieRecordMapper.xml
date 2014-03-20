@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.sixlab.mr.beans.MovieRecordMapper">
+
+	<select id="selectMoviesByID" parameterType="int" resultMap="Records">
+		SELECT
+		saw.id, saw.name, saw.country, saw.year, saw.director,
+		saw.actor,
+		saw.remark, saw.inDate
+		FROM
+		saw
+		WHERE
+		saw.id like #{id}
+	</select>
+
+	<select id="selectMoviesByDate" parameterType="String"
+		resultMap="Records">
+		SELECT
+		saw.id, saw.name, saw.country, saw.year, saw.director,
+		saw.actor,
+		saw.remark, saw.inDate
+		FROM
+		saw
+		WHERE
+		saw.inDate like %#{inDate}% </select>
+
+	<select id="selectMovies" parameterType="record" resultMap="Records">
+		SELECT
+		saw.id, saw.name,
+		saw.country, saw.year, saw.director,
+		saw.actor,
+		saw.remark, saw.inDate
+		FROM
+		saw
+		WHERE
+		saw.name like %#{name}%
+		OR
+		saw.country like %#{country}%
+		OR
+		saw.year like %#{year}%
+		OR
+		saw.director like %#{director}%
+		OR saw.actor like %#{actor}%
+		OR
+		saw.remark like %#{remark}%</select>
+
+	<insert id="insertMovie" parameterType="record" flushCache="true"
+		statementType="PREPARED">
+		INSERT INTO
+		saw(name, country, year, director,
+		actor,remark, inDate)
+		VALUES(#{name},#{country},#{year},#{director},#{actor},#{remark},#{inDate})
+	</insert>
+
+	<update id="updateMovie" parameterType="record">
+		UPDATE saw
+		SET
+		saw.name=#{name},
+		saw.country=#{country},
+		saw.year=#{year},
+		saw.director=#{director},
+		saw.actor=#{actor},
+		saw.remark=#{remark},
+		saw.inDate=#{inDate}
+		WHERE id = #{id}
+	</update>
+
+	<resultMap type="record" id="Records">
+		<id property="id" column="id"></id>
+		<result property="name" column="name"></result>
+		<result property="country" column="country"></result>
+		<result property="year" column="year"></result>
+		<result property="director" column="director"></result>
+		<result property="actor" column="actor"></result>
+		<result property="remark" column="remark"></result>
+		<result property="inDate" column="inDate"></result>
+	</resultMap>
+
+</mapper>

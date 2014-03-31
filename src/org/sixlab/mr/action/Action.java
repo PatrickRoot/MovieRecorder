@@ -13,7 +13,9 @@ public class Action {
 		
 		MovieDao dao = new MovieDao();
 		
-		dao.insertMovie(record);
+		int id = dao.insertMovie(record);
+		
+		record.setId(id);
 		
 		List<MovieRecord> records = dao.selectMovies(record);
 		

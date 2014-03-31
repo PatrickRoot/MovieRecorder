@@ -139,6 +139,7 @@ public class AppView extends JFrame {
 		content = new Action().search(null);
 		jTable = new JTable(content, title);
 		jScrollPane.setViewportView(jTable);
+		setColumnWidth();
 		
 		resultLabel = new JLabel();
 		helpButton = new JButton("帮助");
@@ -149,6 +150,24 @@ public class AppView extends JFrame {
 		helpButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				
+				System.out.println(jTable.getColumnModel().getColumn(0)
+						.getWidth());
+				System.out.println(jTable.getColumnModel().getColumn(1)
+						.getWidth());
+				System.out.println(jTable.getColumnModel().getColumn(2)
+						.getWidth());
+				System.out.println(jTable.getColumnModel().getColumn(3)
+						.getWidth());
+				System.out.println(jTable.getColumnModel().getColumn(4)
+						.getWidth());
+				System.out.println(jTable.getColumnModel().getColumn(5)
+						.getWidth());
+				System.out.println(jTable.getColumnModel().getColumn(6)
+						.getWidth());
+				System.out.println(jTable.getColumnModel().getColumn(7)
+						.getWidth());
+				
 				StringBuffer helpText = new StringBuffer();
 				helpText.append("1、修改的时候必需有ID。\n");
 				helpText.append("2、修改时日期为空，则表示当前日期。\n");
@@ -214,6 +233,7 @@ public class AppView extends JFrame {
 				content = new Action().search(null);
 				resultLabel.setText("共有 " + content.size() + " 部电影。");
 				jTable.setModel(new DefaultTableModel(content, title));
+				setColumnWidth();
 				pack();
 			}
 		});
@@ -294,6 +314,21 @@ public class AppView extends JFrame {
 		nameJTextField.requestFocus();
 	}
 	
+	private void setColumnWidth() {
+		
+		jTable.getColumnModel().getColumn(0).setMinWidth(32);
+		jTable.getColumnModel().getColumn(0).setMaxWidth(32);
+		
+		jTable.getColumnModel().getColumn(1).setMinWidth(75);
+		jTable.getColumnModel().getColumn(1).setMaxWidth(75);
+		
+		jTable.getColumnModel().getColumn(3).setMinWidth(32);
+		jTable.getColumnModel().getColumn(3).setMaxWidth(32);
+		
+		jTable.getColumnModel().getColumn(7).setMinWidth(60);
+		jTable.getColumnModel().getColumn(7).setMaxWidth(60);
+	}
+	
 	private void updateTrigger() {
 		
 		String id = idJtField.getText();
@@ -309,6 +344,7 @@ public class AppView extends JFrame {
 		content = new Action().update(record);
 		resultLabel.setText("更新成功，id：" + content.get(0).get(0));
 		jTable.setModel(new DefaultTableModel(content, title));
+		setColumnWidth();
 		pack();
 	}
 	
@@ -329,6 +365,7 @@ public class AppView extends JFrame {
 		String id = content.get(0).get(0);
 		resultLabel.setText("插入成功，id：" + id);
 		jTable.setModel(new DefaultTableModel(content, title));
+		setColumnWidth();
 		pack();
 	}
 	
@@ -384,6 +421,7 @@ public class AppView extends JFrame {
 		content = new Action().search(record);
 		resultLabel.setText("搜索成功，数量：" + content.size());
 		jTable.setModel(new DefaultTableModel(content, title));
+		setColumnWidth();
 		pack();
 	}
 	

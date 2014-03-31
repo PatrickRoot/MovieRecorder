@@ -27,8 +27,9 @@ public class MovieDao {
 		SqlSession sqlSession = GetSession.getSession();
 		int id = 0;
 		try {
-			id = sqlSession.insert("insertMovie", record);
+			sqlSession.insert("insertMovie", record);
 			sqlSession.commit();
+			id = Integer.parseInt(String.valueOf(sqlSession.selectOne("selectLastId")));
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {

@@ -35,12 +35,14 @@
 			</if>
 		</where>
 	</select>
+	
+	<select id="selectLastId" resultType="int">
+		SELECT last_insert_rowid()
+	</select>
 
 	<insert id="insertMovie" parameterType="record" flushCache="true"
 		statementType="PREPARED">
-		<selectKey resultType="int" order="AFTER" keyProperty="id">
-			SELECT LAST_INSERT_ID();
-		</selectKey>
+
 		INSERT INTO
 		saw(name
 		<if test="country!=null and country!=''">

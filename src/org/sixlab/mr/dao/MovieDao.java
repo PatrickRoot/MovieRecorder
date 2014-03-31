@@ -7,46 +7,12 @@ import org.sixlab.mr.beans.MovieRecord;
 import org.sixlab.mr.util.GetSession;
 
 public class MovieDao {
-	public List<MovieRecord> selectMoviesByID(int id) {
-		SqlSession sqlSession = GetSession.getSession();
-		List<MovieRecord> recordList = null;
-		try {
-			recordList = sqlSession.selectList("selectMoviesByID", id);
-			sqlSession.commit();
-			sqlSession.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			sqlSession.close();
-		}
-		return recordList;
-	}
-	
-	public static void main(String[] args) {
-		MovieDao mDao=new MovieDao();
-		System.out.println(mDao.selectMoviesByID(2).get(0).getName());
-	}
-	
-	public List<MovieRecord> selectMoviesByDate(String date) {
-		SqlSession sqlSession = GetSession.getSession();
-		List<MovieRecord> recordList = null;
-		try {
-			recordList = sqlSession.selectList("selectMoviesByDate", date);
-			sqlSession.commit();
-			sqlSession.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			sqlSession.close();
-		}
-		return recordList;
-	}
 	
 	public List<MovieRecord> selectMovies(MovieRecord record) {
 		SqlSession sqlSession = GetSession.getSession();
 		List<MovieRecord> recordList = null;
 		try {
-			recordList = sqlSession.selectList("selectMovies",record);
+			recordList = sqlSession.selectList("selectMovies", record);
 			sqlSession.commit();
 			sqlSession.close();
 		} catch (Exception e) {
@@ -57,21 +23,25 @@ public class MovieDao {
 		return recordList;
 	}
 	
-	public void insertMovie() {
+	public int insertMovie(MovieRecord record) {
 		SqlSession sqlSession = GetSession.getSession();
+		int id = 0;
 		try {
-			
+			id = sqlSession.insert("insertMovie", record);
+			sqlSession.commit();
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			sqlSession.close();
 		}
+		return id;
 	}
 	
-	public void updateMovie() {
+	public void updateMovie(MovieRecord record) {
 		SqlSession sqlSession = GetSession.getSession();
 		try {
-			
+			sqlSession.update("updateMovie", record);
+			sqlSession.commit();
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {

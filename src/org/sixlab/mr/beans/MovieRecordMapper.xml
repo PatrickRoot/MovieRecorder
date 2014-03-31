@@ -3,66 +3,103 @@
 
 <mapper namespace="org.sixlab.mr.beans.MovieRecordMapper">
 
-	<select id="selectMoviesByID" parameterType="int" resultMap="Records">
-		SELECT
-		saw.id, saw.name, saw.country, saw.year, saw.director,
-		saw.actor,
-		saw.remark, saw.inDate
-		FROM
-		saw
-		WHERE
-		saw.id like #{id}
-	</select>
-
-	<select id="selectMoviesByDate" parameterType="String"
-		resultMap="Records">
-		SELECT
-		saw.id, saw.name, saw.country, saw.year, saw.director,
-		saw.actor,
-		saw.remark, saw.inDate
-		FROM
-		saw
-		WHERE
-		saw.inDate like %#{inDate}% </select>
-
 	<select id="selectMovies" parameterType="record" resultMap="Records">
 		SELECT
-		saw.id, saw.name,
-		saw.country, saw.year, saw.director,
-		saw.actor,
-		saw.remark, saw.inDate
+		*
 		FROM
 		saw
-		WHERE
-		saw.name like %#{name}%
-		OR
-		saw.country like %#{country}%
-		OR
-		saw.year like %#{year}%
-		OR
-		saw.director like %#{director}%
-		OR saw.actor like %#{actor}%
-		OR
-		saw.remark like %#{remark}%</select>
+		<where>
+			<if test="id!=null and id!=''">
+				id like %#{id}%
+			</if>
+			<if test="name!=null and name!=''">
+				name like %#{name}%
+			</if>
+			<if test="country!=null and country!=''">
+				country like #{country},
+			</if>
+			<if test="year!=null and year!=''">
+				year like #{year},
+			</if>
+			<if test="director!=null and director!=''">
+				director like #{director},
+			</if>
+			<if test="actor!=null and actor!=''">
+				actor like #{actor},
+			</if>
+			<if test="remark!=null and remark!=''">
+				remark like #{remark},
+			</if>
+			<if test="inDate!=null and inDate!=''">
+				inDate like #{inDate}
+			</if>
+		</where>
+	</select>
 
 	<insert id="insertMovie" parameterType="record" flushCache="true"
 		statementType="PREPARED">
 		INSERT INTO
-		saw(name, country, year, director,
-		actor,remark, inDate)
-		VALUES(#{name},#{country},#{year},#{director},#{actor},#{remark},#{inDate})
+		saw(name
+		<if test="country!=null and country!=''">
+			,country
+		</if>
+		<if test="year!=null and year!=''">
+			,year
+		</if>
+		<if test="director!=null and director!=''">
+			,director
+		</if>
+		<if test="actor!=null and actor!=''">
+			,actor
+		</if>
+		<if test="remark!=null and remark!=''">
+			,remark
+		</if>
+		, inDate)
+		VALUES(#{name}
+		<if test="country!=null and country!=''">
+			,#{country}
+		</if>
+		<if test="year!=null and year!=''">
+			,#{year}
+		</if>
+		<if test="director!=null and director!=''">
+			,#{director}
+		</if>
+		<if test="actor!=null and actor!=''">
+			,#{actor}
+		</if>
+		<if test="remark!=null and remark!=''">
+			,#{remark}
+		</if>
+		,#{inDate})
 	</insert>
 
 	<update id="updateMovie" parameterType="record">
 		UPDATE saw
-		SET
-		saw.name=#{name},
-		saw.country=#{country},
-		saw.year=#{year},
-		saw.director=#{director},
-		saw.actor=#{actor},
-		saw.remark=#{remark},
-		saw.inDate=#{inDate}
+		<set>
+			<if test="name!=null and name!=''">
+				name=#{name},
+			</if>
+			<if test="country!=null and country!=''">
+				country=#{country},
+			</if>
+			<if test="year!=null and year!=''">
+				year=#{year},
+			</if>
+			<if test="director!=null and director!=''">
+				director=#{director},
+			</if>
+			<if test="actor!=null and actor!=''">
+				actor=#{actor},
+			</if>
+			<if test="remark!=null and remark!=''">
+				remark=#{remark},
+			</if>
+			<if test="inDate!=null and inDate!=''">
+				inDate=#{inDate}
+			</if>
+		</set>
 		WHERE id = #{id}
 	</update>
 
@@ -76,5 +113,16 @@
 		<result property="remark" column="remark"></result>
 		<result property="inDate" column="inDate"></result>
 	</resultMap>
+
+	<insert id="insertMovieBackup" parameterType="record"
+		flushCache="true" statementType="PREPARED">
+		INSERT INTO
+		saw(name ,country,year
+		,director ,actor ,remark , inDate)
+		VALUES(#{name,jdbcType=VARCHAR}
+		,#{country,jdbcType=VARCHAR} ,#{year,jdbcType=VARCHAR}
+		,#{director,jdbcType=VARCHAR} ,#{actor,jdbcType=VARCHAR}
+		,#{remark,jdbcType=VARCHAR} ,#{inDate})
+	</insert>
 
 </mapper>

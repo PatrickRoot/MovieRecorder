@@ -341,6 +341,14 @@ public class AppView extends JFrame {
 		
 		MovieRecord record = inputRecord();
 		
+		String inDate=inDateJTextField.getText();
+		
+		if (null == inDate || "".equals(inDate)) {
+			Date today = new Date();
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+			record.setInDate(sdf.format(today));
+		}
+		
 		content = new Action().update(record);
 		resultLabel.setText("更新成功，id：" + content.get(0).get(0));
 		jTable.setModel(new DefaultTableModel(content, title));
@@ -359,6 +367,14 @@ public class AppView extends JFrame {
 		}
 		
 		MovieRecord record = inputRecord();
+		
+		String inDate=inDateJTextField.getText();
+		
+		if (null == inDate || "".equals(inDate)) {
+			Date today = new Date();
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+			record.setInDate(sdf.format(today));
+		}
 		
 		content = new Action().insert(record);
 		System.out.println(content.size());
@@ -458,12 +474,6 @@ public class AppView extends JFrame {
 		MovieRecord record = new MovieRecord();
 		if (null != idInput && !"".equals(idInput)) {
 			record.setId(Integer.parseInt(idInput));
-		}
-		
-		if (null == inDate || "".equals(inDate)) {
-			Date today = new Date();
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
-			inDate = sdf.format(today);
 		}
 		
 		record.setName(name);

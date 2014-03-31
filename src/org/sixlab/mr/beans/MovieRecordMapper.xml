@@ -10,34 +10,37 @@
 		saw
 		<where>
 			<if test="id!=null and id!=''">
-				id like %#{id}%
+				id = #{id}
 			</if>
 			<if test="name!=null and name!=''">
-				name like %#{name}%
+				and name like '%${name}%' 
 			</if>
 			<if test="country!=null and country!=''">
-				country like #{country},
+				and country like '%${country}%' 
 			</if>
 			<if test="year!=null and year!=''">
-				year like #{year},
+				and year like '%${year}%' 
 			</if>
 			<if test="director!=null and director!=''">
-				director like #{director},
+				and director like '%${director}%' 
 			</if>
 			<if test="actor!=null and actor!=''">
-				actor like #{actor},
+				and actor like '%${actor}%' 
 			</if>
 			<if test="remark!=null and remark!=''">
-				remark like #{remark},
+				and remark like '%${remark}%' 
 			</if>
 			<if test="inDate!=null and inDate!=''">
-				inDate like #{inDate}
+				and inDate like '%${inDate}%' 
 			</if>
 		</where>
 	</select>
 
 	<insert id="insertMovie" parameterType="record" flushCache="true"
 		statementType="PREPARED">
+		<selectKey resultType="int" order="AFTER" keyProperty="id">
+			SELECT LAST_INSERT_ID();
+		</selectKey>
 		INSERT INTO
 		saw(name
 		<if test="country!=null and country!=''">

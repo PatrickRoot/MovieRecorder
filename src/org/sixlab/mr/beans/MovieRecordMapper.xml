@@ -34,6 +34,7 @@
 				and inDate like '%${inDate}%' 
 			</if>
 		</where>
+		ORDER BY id DESC
 	</select>
 	
 	<select id="selectLastId" resultType="int">

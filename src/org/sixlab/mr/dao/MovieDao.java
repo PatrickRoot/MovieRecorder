@@ -23,19 +23,24 @@ public class MovieDao {
 		return recordList;
 	}
 	
+	public static void main(String[] args) {
+		MovieRecord record = new MovieRecord();
+		record.setName("111");
+		record.setInDate("20122323");
+		new MovieDao().insertMovie(record);
+	}
+	
 	public int insertMovie(MovieRecord record) {
 		SqlSession sqlSession = GetSession.getSession();
-		int id = 0;
 		try {
 			sqlSession.insert("insertMovie", record);
 			sqlSession.commit();
-			id = Integer.parseInt(String.valueOf(sqlSession.selectOne("selectLastId")));
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			sqlSession.close();
 		}
-		return id;
+		return record.getId();
 	}
 	
 	public void updateMovie(MovieRecord record) {

@@ -36,14 +36,10 @@
 		</where>
 		ORDER BY id DESC
 	</select>
-	
-	<select id="selectLastId" resultType="int">
-		SELECT last_insert_rowid()
-	</select>
 
 	<insert id="insertMovie" parameterType="record" flushCache="true"
-		statementType="PREPARED">
-
+		statementType="PREPARED" keyProperty="id"
+		useGeneratedKeys="true" >
 		INSERT INTO
 		saw(name
 		<if test="country!=null and country!=''">

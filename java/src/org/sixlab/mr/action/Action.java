@@ -31,7 +31,7 @@ public class Action {
 	/**
 	 * 更新一条记录，并返回相似记录
 	 * @param record 要更新的记录
-	 * @return 返回相似的记录
+	 * @return 返回相似的记录 
 	 */
 	public Vector<Vector<String>> update(MovieRecord record) {
 		

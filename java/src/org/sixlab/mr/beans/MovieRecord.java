@@ -9,6 +9,7 @@ public class MovieRecord {
 	private String actor;
 	private String remark;
 	private String inDate;
+	
 	public int getId() {
 		return id;
 	}

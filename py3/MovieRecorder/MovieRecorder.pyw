@@ -1,61 +1,89 @@
 # -*- coding: utf-8 -*-
 
 """
-Module implementing MovieRecorder.
+Module implementing MainWindow.
 """
 
-from PyQt4.QtGui import *
-from PyQt4.QtCore import *
-from PyQt4 import QtGui
+from PyQt4.QtCore import pyqtSlot
+from PyQt4.QtGui import QMainWindow, QApplication, QTableWidgetItem
 
-from Ui_MovieRecorderUi import Ui_MainWindow
+from Ui_MovieRecorder import Ui_MainWindow
 from DealDatebase import DataHandle
-
 from Record import Record
 import time
-import sys
+import webbrowser
 
-class MovieRecorder(QMainWindow, Ui_MainWindow):
+class MainWindow(QMainWindow, Ui_MainWindow):
     """
     Class documentation goes here.
     """
-    def __init__(self, parent = None):
+    def __init__(self, parent=None):
         """
         Constructor
+        
+        @param parent reference to the parent widget (QWidget)
         """
-        QMainWindow.__init__(self, parent)
+        super().__init__(parent)
         self.setupUi(self)
         self.message = Record()
         self.dbHandle = DataHandle()
         self.records = self.dbHandle.query(Record())
         self.repainData()
+        self.statusBar.showMessage("总共有 "+ str(len(self.records)) +" 部电影记录。")
     
-    @pyqtSignature("")
+    @pyqtSlot()
     def on_action_triggered(self):
         """
         Slot documentation goes here.
         """
-        # TODO: not implemented yet
-        # 退出
-        sys.exit(app.exec_())
+        #退出
+        sys.exit(0)
     
-    @pyqtSignature("")
+    @pyqtSlot()
     def on_action_2_triggered(self):
         """
         Slot documentation goes here.
         """
         # TODO: not implemented yet
-        # 查询
-        self.queryFunction()
-        self.label_s.setText(_translate("MainWindow", '有电影：'+ len(self.records) +'部', None));
+        #帮助
         
-    @pyqtSignature("")
+    
+    @pyqtSlot()
     def on_action_3_triggered(self):
         """
         Slot documentation goes here.
         """
+        #搜索
+        i=self.tableWidget.currentRow()
+        j=self.tableWidget.currentColumn()
+        selectText=self.tableWidget.item(i, j).text()
+        urlString  = "http://www.baidu.com/s?ie=utf-8&wd="+selectText
+        webbrowser.open_new_tab(urlString);
+    
+    @pyqtSlot()
+    def on_action_4_triggered(self):
+        """
+        Slot documentation goes here.
+        """
         # TODO: not implemented yet
-        # 重置
+        #关于
+        
+    
+    @pyqtSlot()
+    def on_action_5_triggered(self):
+        """
+        Slot documentation goes here.
+        """
+        #查询
+        self.queryFunction()
+        self.statusBar.showMessage("查询成功，总共有 "+ str(len(self.records)) +" 部电影记录。")
+    
+    @pyqtSlot()
+    def on_action_6_triggered(self):
+        """
+        Slot documentation goes here.
+        """
+        #重置
         self.lineEdit.setText('')
         self.lineEdit_2.setText('')
         self.lineEdit_3.setText('')
@@ -66,16 +94,14 @@ class MovieRecorder(QMainWindow, Ui_MainWindow):
         self.lineEdit_8.setText('')
         self.message = Record()
         self.queryFunction()
+        self.statusBar.showMessage("重置成功，总共有 "+ str(len(self.records)) +" 部电影记录。")
         
-        pass
-    
-    @pyqtSignature("")
-    def on_action_4_triggered(self):
+    @pyqtSlot()
+    def on_action_7_triggered(self):
         """
         Slot documentation goes here.
         """
-        # TODO: not implemented yet
-        # 编辑
+        #编辑
         if not self.getInput(False):
             return
         
@@ -86,35 +112,51 @@ class MovieRecorder(QMainWindow, Ui_MainWindow):
         else:
             self.dbHandle.edit(self.message)
         
-        self.queryFunction()
+        self.message = Record()
+        self.message.Name = self.lineEdit_2.text()
+        self.records=self.dbHandle.query(self.message)
+        self.repainData()
+        self.statusBar.showMessage("编辑成功，总共有 "+ str(len(self.records)) +" 部类似电影记录。")
     
-    @pyqtSignature("")
-    def on_action_5_triggered(self):
+    @pyqtSlot()
+    def on_action_8_triggered(self):
         """
         Slot documentation goes here.
         """
-        # TODO: not implemented yet
-        # 帮助
-        raise NotImplementedError
+        #填写
+        i=self.tableWidget.currentRow()
+        id=self.tableWidget.item(i, 0).text()
+        record = self.dbHandle.queryById(id)
+        self.lineEdit.setText(str(record[0]))
+        self.lineEdit_2.setText(str(record[1]))
+        self.lineEdit_3.setText(str(record[2]))
+        self.lineEdit_4.setText(str(record[3]))
+        self.lineEdit_5.setText(str(record[4]))
+        self.lineEdit_6.setText(str(record[5]))
+        self.lineEdit_7.setText(str(record[6]))
+        self.lineEdit_8.setText(str(record[7]))
     
-    @pyqtSignature("")
-    def on_action_7_triggered(self):
+    @pyqtSlot(int, int)
+    def on_tableWidget_cellClicked(self, row, column):
         """
         Slot documentation goes here.
         """
-        # TODO: not implemented yet
-        # 关于
-        raise NotImplementedError
-    
-    @pyqtSlot(int, int, int, int)
-    def on_tableWidget_currentCellChanged(self, currentRow, currentColumn, previousRow, previousColumn):
-        """
-        Slot documentation goes here.
-        """
-        # TODO: not implemented yet
-        print(currentRow+":"+currentColumn)
-        print(previousRow+">"+previousColumn)
-    
+        #选中文本
+        if column == 0:
+            id=self.tableWidget.item(row, 0).text()
+            record = self.dbHandle.queryById(id)
+            self.lineEdit.setText(str(record[0]))
+            self.lineEdit_2.setText(str(record[1]))
+            self.lineEdit_3.setText(str(record[2]))
+            self.lineEdit_4.setText(str(record[3]))
+            self.lineEdit_5.setText(str(record[4]))
+            self.lineEdit_6.setText(str(record[5]))
+            self.lineEdit_7.setText(str(record[6]))
+            self.lineEdit_8.setText(str(record[7]))
+        else:
+            selectText=self.tableWidget.item(row, column).text()
+            self.statusBar.showMessage("选中文本： "+selectText);
+        
     def repainData(self):
         self.tableWidget.setRowCount(len(self.records))
         i=0
@@ -123,38 +165,30 @@ class MovieRecorder(QMainWindow, Ui_MainWindow):
             for column in record:
                 if type(column) == type(1234):
                     column=str(column)
-                item = QtGui.QTableWidgetItem(column)
+                item = QTableWidgetItem(column)
                 self.tableWidget.setItem(i, j, item)
                 j+=1
             i+=1
-        #self.verticalHeader = self.tableWidget.verticalHeader
-        #self.verticalHeader.setVisible(False)
+        self.tableWidget.setColumnWidth(0, 40)
+        self.tableWidget.setColumnWidth(1, 190)
+        self.tableWidget.setColumnWidth(3, 55)
+        self.tableWidget.setColumnWidth(7, 80)
     
     def getInput(self, isQuery):
-        id=self.lineEdit.text()
         self.message.Name=self.lineEdit_2.text()
-        self.message.Country=self.lineEdit_4.text()
-        self.message.Year=self.lineEdit_3.text()
+        self.message.Country=self.lineEdit_3.text()
+        self.message.Year=self.lineEdit_4.text()
         self.message.Director=self.lineEdit_5.text()
         self.message.Actor=self.lineEdit_6.text()
         self.message.Remark=self.lineEdit_7.text()
-
-
-#        id=unicode(self.lineEdit.text(), 'utf-8')
-#        self.message.Name=unicode(self.lineEdit_2.text(), 'gbk', 'ignore')
-#        self.message.Country=unicode(self.lineEdit_4.text(), 'utf-8')
-#        self.message.Year=unicode(self.lineEdit_3.text(), 'utf-8')
-#        self.message.Director=unicode(self.lineEdit_5.text(), 'utf-8')
-#        self.message.Actor=unicode(self.lineEdit_6.text(), 'utf-8')
-#        self.message.Remark=unicode(self.lineEdit_7.text(), 'utf-8')
         
+        id=self.lineEdit.text()
         if self.isNumber(id):
             self.message.Id=id
         elif len(id)>0:
             self.lineEdit.setFocus()
             return False
         
-#        InDate=unicode(self.lineEdit_8.text(), 'utf-8')
         InDate=self.lineEdit_8.text()
         if isQuery:
             if self.isNumber(InDate):
@@ -164,10 +198,10 @@ class MovieRecorder(QMainWindow, Ui_MainWindow):
                 self.lineEdit_8.setFocus()
                 return False
         
-        if type(InDate) == type(20201212) and len(str(InDate))==8:
+        if type(InDate) == type('20201212') and len(InDate)==8:
             self.message.InDate=InDate
             return True
-        elif InDate is None or (type(InDate)==type(u'') and len(InDate)==0):
+        elif InDate is None or (type(InDate)==type('') and len(InDate)==0):
             date = time.localtime()
             year=date.tm_year
             month=date.tm_mon
@@ -209,10 +243,11 @@ class MovieRecorder(QMainWindow, Ui_MainWindow):
             return
         self.records=self.dbHandle.query(self.message)
         self.repainData()
-    
+        
+        
 if __name__ == "__main__":
-    app = QtGui.QApplication(sys.argv)
-    MyApp = MovieRecorder()
-    
-    MyApp.show()
+    import sys
+    app = QApplication(sys.argv)
+    myApp = MainWindow()
+    myApp.show()
     sys.exit(app.exec_())

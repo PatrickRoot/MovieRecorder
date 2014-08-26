@@ -1,12 +1,11 @@
 # -*- coding: utf-8 -*-
 
 from sqlite3 import *
-from Record import Record
 
 class DataHandle:
     
     def query(self,record):
-        sql="select * from saw "
+        sql  =" select * from saw "
         sql+=" where Id like '%"+record.Id+"%' "
         sql+=" and Name like '%"+ record.Name +"%' "
         sql+=" and Country like '%"+ record.Country +"%' "
@@ -20,59 +19,37 @@ class DataHandle:
         return self.exeSQL()
     
     def insert(self, record):
-        sql = "insert into "
+        sql  =" insert into "
         sql+=" saw(Name,Country,Year,Director,Actor,Remark,InDate) "
         sql+=" values('"+ record.Name + "','"+ record.Country + "','"+ record.Year + "','"+ record.Director + "','"+ record.Actor + "','"+ record.Remark + "','"+ record.InDate + "')"
         self.sql=sql
         return self.exeSQL()
     
     def edit(self, record):
-        hasSetOne = False
         
         sql=" update saw set "
-        if len(record.Name)>0:
-            sql+=" Name = '" + record.Name + "'"
-            hasSetOne = True
-            
-        if len(record.Country)>0:
-            if hasSetOne:
-                sql+=","
-            sql+=" Country = '" + record.Country +"'"
-            hasSetOne = True
-            
-        if len(record.Year)>0:
-            if hasSetOne:
-                sql+=","
-            sql+=" Year = '" + record.Year +"'"
-            hasSetOne = True
-            
-        if len(record.Director)>0:
-            if hasSetOne:
-                sql+=","
-            sql+=" Director = '" + record.Director +"'"
-            hasSetOne = True
-            
-        if len(record.Actor)>0:
-            if hasSetOne:
-                sql+=","
-            sql+=" Actor = '" + record.Actor +"'"
-            hasSetOne = True
-            
-        if len(record.Remark)>0:
-            if hasSetOne:
-                sql+=","
-            sql+=" Remark = '" + record.Remark +"'"
-            hasSetOne = True
-                
-        if len(record.InDate)>0:
-            if hasSetOne:
-                sql+=","
-            sql+=" InDate = '" + record.InDate +"'"
-            hasSetOne = True
+        sql+=" Name = '" + record.Name + "'"
+        sql+=","
+        sql+=" Country = '" + record.Country +"'"
+        sql+=","
+        sql+=" Year = '" + record.Year +"'"
+        sql+=","
+        sql+=" Director = '" + record.Director +"'"
+        sql+=","
+        sql+=" Actor = '" + record.Actor +"'"
+        sql+=","
+        sql+=" Remark = '" + record.Remark +"'"
+        sql+=","
+        sql+=" InDate = '" + record.InDate +"'"
             
         sql+=" where Id = " + str(record.Id)
         self.sql=sql
         return self.exeSQL()
+    
+    def queryById(self, id):
+        self.sql  = " select * from saw where Id = "
+        self.sql+=id
+        return self.exeSQL()[0]
     
     def exeSQL(self):
         str="records.db"
@@ -83,14 +60,14 @@ class DataHandle:
         cx.commit()
         return result
 
-if __name__ == '__main__':
-    pass
+#if __name__ == '__main__':
 
-#    将数据库中为null的填为''
+    #将数据库中为null的填为''
 #    b = DataHandle()
-#    record=Record()
+#    record=Record.Record()
 #    b.sql="select * from saw"
 #    recordsB=b.exeSQL()
+#    print(len(recordsB))
 #    for arecode in recordsB:
 #        a=list(arecode)
 #        isTrue = False
@@ -101,7 +78,7 @@ if __name__ == '__main__':
 #                isTrue = True
 #            i+=1
 #        if isTrue:
-#            print a[0]
+#            print(a[0])
 #            record.Id=a[0]
 #            record.Name=a[1]
 #            record.Country=a[2]

@@ -1,295 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Tasks SYSTEM "Tasks-5.1.dtd">
 <!-- eric5 tasks file for project MovieRecorder -->
-<!-- Saved: 2014-06-26, 11:31:27 -->
+<!-- Saved: 2014-08-24, 13:54:34 -->
 <Tasks version="5.1">
   <ProjectScanFilter></ProjectScanFilter>
   <Task priority="1" completed="False" type="1">
     <Summary>TODO: not implemented yet</Summary>
     <Description></Description>
-    <Created>2014-06-26, 11:02:44</Created>
+    <Created>2014-07-05, 19:04:10</Created>
     <Resource>
-      <Filename>MovieRecorderU1i.py</Filename>
-      <Linenumber>31</Linenumber>
+      <Filename>MovieRecorder.py</Filename>
+      <Linenumber>49</Linenumber>
     </Resource>
   </Task>
   <Task priority="1" completed="False" type="1">
     <Summary>TODO: not implemented yet</Summary>
     <Description></Description>
-    <Created>2014-06-26, 11:05:50</Created>
+    <Created>2014-07-05, 19:04:10</Created>
     <Resource>
-      <Filename>MovieRecorder11Ui.py</Filename>
-      <Linenumber>31</Linenumber>
+      <Filename>MovieRecorder.py</Filename>
+      <Linenumber>70</Linenumber>
     </Resource>
   </Task>
   <Task priority="1" completed="False" type="1">
     <Summary>TODO: not implemented yet</Summary>
     <Description></Description>
-    <Created>2014-06-26, 11:05:50</Created>
+    <Created>2014-08-17, 13:32:46</Created>
     <Resource>
-      <Filename>MovieRecorder11Ui.py</Filename>
-      <Linenumber>39</Linenumber>
-    </Resource>
-  </Task>
-  <Task priority="1" completed="False" type="1">
-    <Summary>TODO: not implemented yet</Summary>
-    <Description></Description>
-    <Created>2014-06-26, 11:05:50</Created>
-    <Resource>
-      <Filename>MovieRecorder11Ui.py</Filename>
+      <Filename>MovieRecorder.pyw</Filename>
       <Linenumber>47</Linenumber>
     </Resource>
   </Task>
   <Task priority="1" completed="False" type="1">
     <Summary>TODO: not implemented yet</Summary>
     <Description></Description>
-    <Created>2014-06-26, 11:05:50</Created>
+    <Created>2014-08-17, 13:32:46</Created>
     <Resource>
-      <Filename>MovieRecorder11Ui.py</Filename>
-      <Linenumber>55</Linenumber>
-    </Resource>
-  </Task>
-  <Task priority="1" completed="False" type="1">
-    <Summary>TODO: not implemented yet</Summary>
-    <Description></Description>
-    <Created>2014-06-26, 11:05:50</Created>
-    <Resource>
-      <Filename>MovieRecorder11Ui.py</Filename>
-      <Linenumber>63</Linenumber>
-    </Resource>
-  </Task>
-  <Task priority="1" completed="False" type="1">
-    <Summary>TODO: not implemented yet</Summary>
-    <Description></Description>
-    <Created>2014-06-26, 11:05:50</Created>
-    <Resource>
-      <Filename>MovieRecorder11Ui.py</Filename>
-      <Linenumber>71</Linenumber>
-    </Resource>
-  </Task>
-  <Task priority="1" completed="False" type="1">
-    <Summary>TODO: not implemented yet</Summary>
-    <Description></Description>
-    <Created>2014-06-26, 11:05:50</Created>
-    <Resource>
-      <Filename>MovieRecorder11Ui.py</Filename>
-      <Linenumber>79</Linenumber>
-    </Resource>
-  </Task>
-  <Task priority="1" completed="False" type="1">
-    <Summary>TODO: not implemented yet</Summary>
-    <Description></Description>
-    <Created>2014-06-26, 11:05:50</Created>
-    <Resource>
-      <Filename>MovieRecorder11Ui.py</Filename>
-      <Linenumber>87</Linenumber>
-    </Resource>
-  </Task>
-  <Task priority="1" completed="False" type="1">
-    <Summary>TODO: not implemented yet</Summary>
-    <Description></Description>
-    <Created>2014-06-26, 11:05:50</Created>
-    <Resource>
-      <Filename>MovieRecorder11Ui.py</Filename>
-      <Linenumber>95</Linenumber>
-    </Resource>
-  </Task>
-  <Task priority="1" completed="False" type="1">
-    <Summary>TODO: not implemented yet</Summary>
-    <Description></Description>
-    <Created>2014-06-26, 11:05:50</Created>
-    <Resource>
-      <Filename>MovieRecorder11Ui.py</Filename>
-      <Linenumber>103</Linenumber>
-    </Resource>
-  </Task>
-  <Task priority="1" completed="False" type="1">
-    <Summary>TODO: not implemented yet</Summary>
-    <Description></Description>
-    <Created>2014-06-26, 11:05:50</Created>
-    <Resource>
-      <Filename>MovieRecorder11Ui.py</Filename>
-      <Linenumber>111</Linenumber>
-    </Resource>
-  </Task>
-  <Task priority="1" completed="False" type="1">
-    <Summary>TODO: not implemented yet</Summary>
-    <Description></Description>
-    <Created>2014-06-26, 11:05:50</Created>
-    <Resource>
-      <Filename>MovieRecorder11Ui.py</Filename>
-      <Linenumber>119</Linenumber>
-    </Resource>
-  </Task>
-  <Task priority="1" completed="False" type="1">
-    <Summary>TODO: not implemented yet</Summary>
-    <Description></Description>
-    <Created>2014-06-26, 11:05:50</Created>
-    <Resource>
-      <Filename>MovieRecorder11Ui.py</Filename>
-      <Linenumber>127</Linenumber>
-    </Resource>
-  </Task>
-  <Task priority="1" completed="False" type="1">
-    <Summary>TODO: not implemented yet</Summary>
-    <Description></Description>
-    <Created>2014-06-26, 11:05:50</Created>
-    <Resource>
-      <Filename>MovieRecorder11Ui.py</Filename>
-      <Linenumber>135</Linenumber>
-    </Resource>
-  </Task>
-  <Task priority="1" completed="False" type="1">
-    <Summary>TODO: not implemented yet</Summary>
-    <Description></Description>
-    <Created>2014-06-26, 11:05:50</Created>
-    <Resource>
-      <Filename>MovieRecorder11Ui.py</Filename>
-      <Linenumber>143</Linenumber>
-    </Resource>
-  </Task>
-  <Task priority="1" completed="False" type="1">
-    <Summary>TODO: not implemented yet</Summary>
-    <Description></Description>
-    <Created>2014-06-26, 11:05:50</Created>
-    <Resource>
-      <Filename>MovieRecorder11Ui.py</Filename>
-      <Linenumber>151</Linenumber>
-    </Resource>
-  </Task>
-  <Task priority="1" completed="False" type="1">
-    <Summary>TODO: not implemented yet</Summary>
-    <Description></Description>
-    <Created>2014-06-26, 11:05:50</Created>
-    <Resource>
-      <Filename>MovieRecorder11Ui.py</Filename>
-      <Linenumber>159</Linenumber>
-    </Resource>
-  </Task>
-  <Task priority="1" completed="False" type="1">
-    <Summary>TODO: not implemented yet</Summary>
-    <Description></Description>
-    <Created>2014-06-26, 11:05:50</Created>
-    <Resource>
-      <Filename>MovieRecorder11Ui.py</Filename>
-      <Linenumber>167</Linenumber>
-    </Resource>
-  </Task>
-  <Task priority="1" completed="False" type="1">
-    <Summary>TODO: not implemented yet</Summary>
-    <Description></Description>
-    <Created>2014-06-26, 11:05:50</Created>
-    <Resource>
-      <Filename>MovieRecorder11Ui.py</Filename>
-      <Linenumber>175</Linenumber>
-    </Resource>
-  </Task>
-  <Task priority="1" completed="False" type="1">
-    <Summary>TODO: not implemented yet</Summary>
-    <Description></Description>
-    <Created>2014-06-26, 11:05:50</Created>
-    <Resource>
-      <Filename>MovieRecorder11Ui.py</Filename>
-      <Linenumber>183</Linenumber>
-    </Resource>
-  </Task>
-  <Task priority="1" completed="False" type="1">
-    <Summary>TODO: not implemented yet</Summary>
-    <Description></Description>
-    <Created>2014-06-26, 11:05:50</Created>
-    <Resource>
-      <Filename>MovieRecorder11Ui.py</Filename>
-      <Linenumber>191</Linenumber>
-    </Resource>
-  </Task>
-  <Task priority="1" completed="False" type="1">
-    <Summary>TODO: not implemented yet</Summary>
-    <Description></Description>
-    <Created>2014-06-26, 11:05:50</Created>
-    <Resource>
-      <Filename>MovieRecorder11Ui.py</Filename>
-      <Linenumber>199</Linenumber>
-    </Resource>
-  </Task>
-  <Task priority="1" completed="False" type="1">
-    <Summary>TODO: not implemented yet</Summary>
-    <Description></Description>
-    <Created>2014-06-26, 11:05:50</Created>
-    <Resource>
-      <Filename>MovieRecorder11Ui.py</Filename>
-      <Linenumber>207</Linenumber>
-    </Resource>
-  </Task>
-  <Task priority="1" completed="False" type="1">
-    <Summary>TODO: not implemented yet</Summary>
-    <Description></Description>
-    <Created>2014-06-26, 11:05:50</Created>
-    <Resource>
-      <Filename>MovieRecorder11Ui.py</Filename>
-      <Linenumber>215</Linenumber>
-    </Resource>
-  </Task>
-  <Task priority="1" completed="False" type="1">
-    <Summary>TODO: not implemented yet</Summary>
-    <Description></Description>
-    <Created>2014-06-26, 11:13:14</Created>
-    <Resource>
-      <Filename>MovieRecorder.py</Filename>
-      <Linenumber>38</Linenumber>
-    </Resource>
-  </Task>
-  <Task priority="1" completed="False" type="1">
-    <Summary>TODO: not implemented yet</Summary>
-    <Description></Description>
-    <Created>2014-06-26, 11:13:14</Created>
-    <Resource>
-      <Filename>MovieRecorder.py</Filename>
-      <Linenumber>47</Linenumber>
-    </Resource>
-  </Task>
-  <Task priority="1" completed="False" type="1">
-    <Summary>TODO: not implemented yet</Summary>
-    <Description></Description>
-    <Created>2014-06-26, 11:13:14</Created>
-    <Resource>
-      <Filename>MovieRecorder.py</Filename>
-      <Linenumber>57</Linenumber>
-    </Resource>
-  </Task>
-  <Task priority="1" completed="False" type="1">
-    <Summary>TODO: not implemented yet</Summary>
-    <Description></Description>
-    <Created>2014-06-26, 11:13:14</Created>
-    <Resource>
-      <Filename>MovieRecorder.py</Filename>
-      <Linenumber>77</Linenumber>
-    </Resource>
-  </Task>
-  <Task priority="1" completed="False" type="1">
-    <Summary>TODO: not implemented yet</Summary>
-    <Description></Description>
-    <Created>2014-06-26, 11:13:14</Created>
-    <Resource>
-      <Filename>MovieRecorder.py</Filename>
-      <Linenumber>96</Linenumber>
-    </Resource>
-  </Task>
-  <Task priority="1" completed="False" type="1">
-    <Summary>TODO: not implemented yet</Summary>
-    <Description></Description>
-    <Created>2014-06-26, 11:13:14</Created>
-    <Resource>
-      <Filename>MovieRecorder.py</Filename>
-      <Linenumber>105</Linenumber>
-    </Resource>
-  </Task>
-  <Task priority="1" completed="False" type="1">
-    <Summary>TODO: not implemented yet</Summary>
-    <Description></Description>
-    <Created>2014-06-26, 11:13:14</Created>
-    <Resource>
-      <Filename>MovieRecorder.py</Filename>
-      <Linenumber>114</Linenumber>
+      <Filename>MovieRecorder.pyw</Filename>
+      <Linenumber>68</Linenumber>
     </Resource>
   </Task>
 </Tasks>

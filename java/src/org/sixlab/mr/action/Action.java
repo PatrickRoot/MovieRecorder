@@ -9,7 +9,7 @@ import org.sixlab.mr.util.VectorUtil;
 
 public class Action {
 	
-	/**
+	/** 
 	 * 插入一条记录，并返回相似的记录
 	 * @param record 要插入的一条记录
 	 * @return 返回所有相似记录

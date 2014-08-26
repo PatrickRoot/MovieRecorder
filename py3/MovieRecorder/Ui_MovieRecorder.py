@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'E:\快盘\sync\MovieRecorder\MovieRecorder.ui'
+# Form implementation generated from reading ui file 'MovieRecorder.ui'
 #
 # Created: Sat Jul 12 10:03:50 2014
 #      by: PyQt4 UI code generator 4.11

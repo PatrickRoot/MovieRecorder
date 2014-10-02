@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'MovieRecorder.ui'
+# Form implementation generated from reading ui file 'E:\project\git\MovieRecorder\py3MyShow\MyShow\MyShow.ui'
 #
-# Created: Sat Jul 12 10:03:50 2014
-#      by: PyQt4 UI code generator 4.11
+# Created: Sun Sep 14 09:30:10 2014
+#      by: PyQt4 UI code generator 4.11.1
 #
-# WARNING! All changes made in this file will be lost! 
+# WARNING! All changes made in this file will be lost!
 
 from PyQt4 import QtCore, QtGui
 
@@ -26,13 +26,13 @@ except AttributeError:
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName(_fromUtf8("MainWindow"))
-        MainWindow.resize(800, 600)
+        MainWindow.resize(715, 600)
         sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Maximum, QtGui.QSizePolicy.Maximum)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(MainWindow.sizePolicy().hasHeightForWidth())
         MainWindow.setSizePolicy(sizePolicy)
-        MainWindow.setMinimumSize(QtCore.QSize(800, 600))
+        MainWindow.setMinimumSize(QtCore.QSize(715, 600))
         MainWindow.setBaseSize(QtCore.QSize(0, 0))
         MainWindow.setToolButtonStyle(QtCore.Qt.ToolButtonTextOnly)
         self.centralWidget = QtGui.QWidget(MainWindow)
@@ -43,7 +43,7 @@ class Ui_MainWindow(object):
         self.centralWidget.setSizePolicy(sizePolicy)
         self.centralWidget.setObjectName(_fromUtf8("centralWidget"))
         self.layoutWidget = QtGui.QWidget(self.centralWidget)
-        self.layoutWidget.setGeometry(QtCore.QRect(3, 9, 791, 521))
+        self.layoutWidget.setGeometry(QtCore.QRect(3, 9, 706, 521))
         self.layoutWidget.setObjectName(_fromUtf8("layoutWidget"))
         self.verticalLayout = QtGui.QVBoxLayout(self.layoutWidget)
         self.verticalLayout.setMargin(0)
@@ -79,10 +79,6 @@ class Ui_MainWindow(object):
         self.label_7.setAlignment(QtCore.Qt.AlignCenter)
         self.label_7.setObjectName(_fromUtf8("label_7"))
         self.gridLayout.addWidget(self.label_7, 0, 6, 1, 1)
-        self.label_8 = QtGui.QLabel(self.layoutWidget)
-        self.label_8.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_8.setObjectName(_fromUtf8("label_8"))
-        self.gridLayout.addWidget(self.label_8, 0, 7, 1, 1)
         self.lineEdit = QtGui.QLineEdit(self.layoutWidget)
         self.lineEdit.setMaximumSize(QtCore.QSize(90, 16777215))
         self.lineEdit.setObjectName(_fromUtf8("lineEdit"))
@@ -111,17 +107,13 @@ class Ui_MainWindow(object):
         self.lineEdit_7.setMaximumSize(QtCore.QSize(90, 16777215))
         self.lineEdit_7.setObjectName(_fromUtf8("lineEdit_7"))
         self.gridLayout.addWidget(self.lineEdit_7, 1, 6, 1, 1)
-        self.lineEdit_8 = QtGui.QLineEdit(self.layoutWidget)
-        self.lineEdit_8.setMaximumSize(QtCore.QSize(90, 16777215))
-        self.lineEdit_8.setObjectName(_fromUtf8("lineEdit_8"))
-        self.gridLayout.addWidget(self.lineEdit_8, 1, 7, 1, 1)
         self.verticalLayout.addLayout(self.gridLayout)
         self.tableWidget = QtGui.QTableWidget(self.layoutWidget)
         self.tableWidget.setStyleSheet(_fromUtf8("font: 9pt \"文泉驿等宽微米黑\";"))
         self.tableWidget.setEditTriggers(QtGui.QAbstractItemView.AnyKeyPressed|QtGui.QAbstractItemView.DoubleClicked|QtGui.QAbstractItemView.EditKeyPressed)
-        self.tableWidget.setColumnCount(8)
+        self.tableWidget.setColumnCount(7)
         self.tableWidget.setObjectName(_fromUtf8("tableWidget"))
-        self.tableWidget.setColumnCount(8)
+        self.tableWidget.setRowCount(0)
         self.tableWidget.horizontalHeader().setVisible(True)
         self.tableWidget.verticalHeader().setVisible(False)
         self.verticalLayout.addWidget(self.tableWidget)
@@ -158,11 +150,18 @@ class Ui_MainWindow(object):
         self.action_7.setObjectName(_fromUtf8("action_7"))
         self.action_3 = QtGui.QAction(MainWindow)
         self.action_3.setObjectName(_fromUtf8("action_3"))
+        self.action_9 = QtGui.QAction(MainWindow)
+        self.action_9.setObjectName(_fromUtf8("action_9"))
+        self.action_10 = QtGui.QAction(MainWindow)
+        self.action_10.setObjectName(_fromUtf8("action_10"))
         self.menu.addAction(self.action)
         self.menu_2.addAction(self.action_5)
         self.menu_2.addAction(self.action_6)
         self.menu_2.addAction(self.action_7)
         self.menu_2.addAction(self.action_3)
+        self.menu_2.addSeparator()
+        self.menu_2.addAction(self.action_9)
+        self.menu_2.addAction(self.action_10)
         self.menu_3.addAction(self.action_2)
         self.menu_3.addSeparator()
         self.menu_3.addAction(self.action_4)
@@ -174,20 +173,21 @@ class Ui_MainWindow(object):
         self.toolBar.addAction(self.action_7)
         self.toolBar.addAction(self.action_5)
         self.toolBar.addAction(self.action_6)
+        self.toolBar.addAction(self.action_9)
+        self.toolBar.addAction(self.action_10)
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(_translate("MainWindow", "Movie Recorder", None))
+        MainWindow.setWindowTitle(_translate("MainWindow", "My Show", None))
         self.label.setText(_translate("MainWindow", "ID", None))
         self.label_2.setText(_translate("MainWindow", "名字", None))
-        self.label_3.setText(_translate("MainWindow", "国家", None))
-        self.label_4.setText(_translate("MainWindow", "年份", None))
-        self.label_5.setText(_translate("MainWindow", "导演", None))
-        self.label_6.setText(_translate("MainWindow", "演员", None))
-        self.label_7.setText(_translate("MainWindow", "备注", None))
-        self.label_8.setText(_translate("MainWindow", "日期", None))
+        self.label_3.setText(_translate("MainWindow", "季", None))
+        self.label_4.setText(_translate("MainWindow", "集", None))
+        self.label_5.setText(_translate("MainWindow", "备注", None))
+        self.label_6.setText(_translate("MainWindow", "开始日期", None))
+        self.label_7.setText(_translate("MainWindow", "更新日期", None))
         self.menu.setTitle(_translate("MainWindow", "文件", None))
         self.menu_2.setTitle(_translate("MainWindow", "功能", None))
         self.menu_3.setTitle(_translate("MainWindow", "帮助", None))
@@ -199,6 +199,8 @@ class Ui_MainWindow(object):
         self.action_6.setText(_translate("MainWindow", "重置", None))
         self.action_7.setText(_translate("MainWindow", "编辑", None))
         self.action_3.setText(_translate("MainWindow", "百度一下", None))
+        self.action_9.setText(_translate("MainWindow", "下一季", None))
+        self.action_10.setText(_translate("MainWindow", "下一集", None))
 
 
 if __name__ == "__main__":

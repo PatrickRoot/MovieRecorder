@@ -127,4 +127,14 @@
 		,#{remark,jdbcType=VARCHAR} ,#{inDate})
 	</insert>
 
+
+    <select id="testM" parameterType="record" resultMap="Records">
+        SELECT
+        *
+        FROM
+        saw
+            <if test="id!=null and id!=''">
+                id = #{id}
+            </if>
+    </select>
 </mapper>

@@ -1,7 +1,7 @@
 package org.sixlab.mr.beans;
 
 public class MovieRecord {
-	private int id;
+	private Integer id;
 	private String name;
 	private String country;
 	private String year;
@@ -10,10 +10,10 @@ public class MovieRecord {
 	private String remark;
 	private String inDate;
 	
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public String getName() {

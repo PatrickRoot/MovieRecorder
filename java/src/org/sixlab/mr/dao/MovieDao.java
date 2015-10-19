@@ -22,13 +22,22 @@ public class MovieDao {
 		}
 		return recordList;
 	}
-	
-	public static void main(String[] args) {
-		MovieRecord record = new MovieRecord();
-		record.setName("111");
-		record.setInDate("20122323");
-		new MovieDao().insertMovie(record);
-	}
+
+    
+    public void test(){
+        MovieRecord record = new MovieRecord();
+        SqlSession sqlSession = GetSession.getSession();
+        List<MovieRecord> recordList = null;
+        try {
+            recordList = sqlSession.selectList("testM", record);
+            System.out.println(recordList);
+            sqlSession.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            sqlSession.close();
+        }
+    }
 	
 	public int insertMovie(MovieRecord record) {
 		SqlSession sqlSession = GetSession.getSession();

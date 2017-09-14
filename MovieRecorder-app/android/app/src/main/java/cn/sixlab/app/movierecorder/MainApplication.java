@@ -1,4 +1,4 @@
-package com.movierecorder;
+package cn.sixlab.app.movierecorder;
 
 import android.app.Application;
 
@@ -7,6 +7,7 @@ import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
+import cn.sixlab.app.movierecorder.BuildConfig;
 
 import java.util.Arrays;
 import java.util.List;

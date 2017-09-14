@@ -1,4 +1,4 @@
-package com.movierecorder;
+package cn.sixlab.app.movierecorder;
 
 import com.facebook.react.ReactActivity;
 

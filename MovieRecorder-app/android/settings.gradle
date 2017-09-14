@@ -1,0 +1,3 @@
+rootProject.name = 'MovieRecorder'
+
+include ':app'

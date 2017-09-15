@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright (c) 2017 Sixlab. All rights reserved.
  *
  * Under the GPLv3(AKA GNU GENERAL PUBLIC LICENSE Version 3).
@@ -7,8 +7,8 @@
  * For more information, please see
  * https://sixlab.cn/
  *
- * @time: 2017/9/14 22:33
- * @author: Patrick <root@sixlab.cn>
+ * @time: 2017/9/15 15:05
+ * @Author: Patrick <root@sixlab.cn>
  */
 import React, {Component} from 'react';
 import {
@@ -16,8 +16,8 @@ import {
     Text,
 } from 'react-native';
 
-export default class MyPage extends Component {
+export default class ShowPage extends Component {
     render() {
-        return <Text>my</Text>
+        return <Text>show</Text>
     }
 }

@@ -14,15 +14,14 @@ import {
     StackNavigator,
 } from 'react-navigation';
 
-import FirstList from '../pages/first/FirstList';
-import FirstDetail from "../pages/first/FirstDetail";
+import HomePage from '../pages/HomePage';
 
-export default FirstNavigator = StackNavigator({
+export default HomeNavigator = StackNavigator({
     FirstList: {
-        screen: FirstList,
+        screen: HomePage,
     },
     FirstDetail: {
-        screen: FirstDetail,
+        screen: HomePage,
     },
 }, {
     initialRouteParams: {

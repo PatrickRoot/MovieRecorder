@@ -16,7 +16,7 @@ import {
 } from 'react-navigation';
 
 import * as TYPES from '../constants/types';
-import FirstNavigator from '../navigators/FirstNavigator';
+import HomeNavigator from '../navigators/HomeNavigator';
 
 const initialNavState = {
     index: 0,
@@ -39,10 +39,10 @@ const initialNavState = {
 export default function (state = initialNavState, action) {
     switch (action.type) {
         case TYPES.NAV_1_LIST:
-            return FirstNavigator.router.getStateForAction(NavigationActions.navigate({routeName: 'FirstList'}), state);
+            return HomeNavigator.router.getStateForAction(NavigationActions.navigate({routeName: 'FirstList'}), state);
 
         case TYPES.NAV_1_DETAIL:
-            return FirstNavigator.router.getStateForAction(NavigationActions.navigate({
+            return HomeNavigator.router.getStateForAction(NavigationActions.navigate({
                 routeName: 'FirstDetail',
                 params: {
                     order: action.order
@@ -50,9 +50,9 @@ export default function (state = initialNavState, action) {
             }), state);
 
         case TYPES.NAV_1_BACK:
-            return FirstNavigator.router.getStateForAction(NavigationActions.back(), state);
+            return HomeNavigator.router.getStateForAction(NavigationActions.back(), state);
 
         default:
-            return FirstNavigator.router.getStateForAction(action, state);
+            return HomeNavigator.router.getStateForAction(action, state);
     }
 }

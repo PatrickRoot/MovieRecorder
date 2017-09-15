@@ -10,10 +10,10 @@
  * @time: 2017/9/14 22:28
  * @author: Patrick <root@sixlab.cn>
  */
-import * as TYPES from '../constants/types';
+import {TAB_CHANGE} from "../constants/types";
 
 const initialState = {
-    selectTab: 'firstTab',
+    selectTab: 'homeTab',
 };
 
 /**
@@ -29,7 +29,7 @@ const initialState = {
  */
 export default function (state = initialState, action) {
     switch (action.type) {
-        case TYPES.TAB_CHANGE:
+        case TAB_CHANGE:
             return {
                 ...state,
                 selectTab: action.tabName,

@@ -41,7 +41,7 @@ export function doGet(url, callback, needAuth) {
 function doFetch(url, options, callback, needAuth) {
     let accessToken = "";
     if(needAuth){
-        accessToken = globalStore.getState().UserStore.accessToken;
+        accessToken = globalStore.getState().UserStore.user.accessToken;
     }
     
     var fetchOptions = {

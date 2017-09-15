@@ -12,6 +12,9 @@
  */
 import React from 'react';
 import {
+    View,
+} from 'react-native';
+import {
     Provider,
 } from 'react-redux';
 import {
@@ -46,7 +49,7 @@ export default class App extends React.Component {
     render() {
         if (this.state.isLoading || globalStore.getState().UserStore.isChecking ) {
             return (
-                <View style={styles.container}>
+                <View>
                     <ActivityIndicator
                         text="Loading..."
                         size="large" />
@@ -58,7 +61,7 @@ export default class App extends React.Component {
                 {
                     globalStore.getState().UserStore.isLoggedIn ?
                         <ContentScreen/>
-                        : <LoginScreen/>
+                        : <ContentScreen/>
                 }
             </Provider>
         );

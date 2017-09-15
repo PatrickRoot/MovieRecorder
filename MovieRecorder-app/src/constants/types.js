@@ -10,15 +10,6 @@
  * @time: 2017/9/14 21:42
  * @author: Patrick <root@sixlab.cn>
  */
-export const LOGGED_IN = 'LOGGED_IN';
-export const LOGGED_OUT = 'LOGGED_OUT';
-export const LOGGED_ERROR = 'LOGGED_ERROR';
-export const LOGGED_DOING = 'LOGGED_DOING';
-
-export const CHECK_LOGIN_ING = 'CHECK_LOGIN_ING';
-export const CHECK_LOGIN_IN = 'CHECK_LOGIN_IN';
-export const CHECK_LOGIN_OUT = 'CHECK_LOGIN_OUT';
-export const CHECK_LOGIN_ERROR = 'CHECK_LOGIN_ERROR';
 
 export const NAV_1_BACK = 'NAV_1_BACK';
 export const NAV_1_LIST = 'NAV_1_LIST';

@@ -10,13 +10,13 @@
  * @time: 2017/9/14 22:23
  * @author: Patrick <root@sixlab.cn>
  */
-import * as TYPES from '../constants/types';
+import * as TYPES from '../constants/userTypes';
 
 const initialState = {
     isChecking: true,
+    isLogging: false,
     isLoggedIn: false,
     user: {},
-    status: 'doing',
 };
 
 /**
@@ -36,58 +36,54 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 isChecking: true,
-                status: 'doing',
             };
         case TYPES.CHECK_LOGIN_IN:
             return {
                 ...state,
                 isChecking: false,
                 isLoggedIn: true,
-                status: 'done',
             };
         case TYPES.CHECK_LOGIN_OUT:
             return {
                 ...state,
                 isChecking: false,
                 isLoggedIn: false,
-                status: 'done',
             };
         case TYPES.CHECK_LOGIN_ERROR:
             return {
                 ...state,
                 isChecking: false,
                 isLoggedIn: false,
-                status: 'done',
             };
 
 
-        case TYPES.LOGGED_DOING:
+        case TYPES.LOGGING_ING:
             return {
                 ...state,
-                status: 'doing'
+                isLogging: true,
             };
 
-        case TYPES.LOGGED_IN:
+        case TYPES.LOGGING_IN:
             return {
                 ...state,
+                isLogging: false,
                 isLoggedIn: true,
                 user: action.user,
-                status: 'done'
             };
 
-        case TYPES.LOGGED_OUT:
+        case TYPES.LOGGING_OUT:
             return {
                 ...state,
+                isLogging: false,
                 isLoggedIn: false,
                 user: {},
-                status: null
             };
-        case TYPES.LOGGED_ERROR:
+        case TYPES.LOGGING_ERROR:
             return {
                 ...state,
+                isLogging: false,
                 isLoggedIn: false,
                 user: {},
-                status: null
             };
         default:
             return state;

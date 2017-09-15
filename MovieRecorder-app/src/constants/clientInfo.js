@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright (c) 2017 Sixlab. All rights reserved.
  *
  * Under the GPLv3(AKA GNU GENERAL PUBLIC LICENSE Version 3).
@@ -7,8 +7,11 @@
  * For more information, please see
  * https://sixlab.cn/
  *
- * @time: 2017/9/14 22:36
- * @author: Patrick <root@sixlab.cn>
+ * @time: 2017/9/15 11:24
+ * @Author: Patrick <root@sixlab.cn>
  */
-export const CHECK_LOGIN_URL = "https://api.sixlab.cn/loginStatus";
-export const LOGIN_URL = "https://api.sixlab.cn/login";
+import {Platform} from 'react-native';
+
+export const clientOs = Platform.OS;
+export const clientVersion = Platform.Version;
+export const appVersion = "0.0.1";

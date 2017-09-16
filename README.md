@@ -1,7 +1,9 @@
 **恢复更新**
 
 由于`GitHub`国内访问不畅，所以两个 Git 仓库作同步：
-Git@OSC：https://git.oschina.net/nianqinianyi/MovieRecorder
+
+码云：https://gitee.com/nianqinianyi/MovieRecorder
+
 GitHub：https://github.com/PatrickRoot/MovieRecorder
 
 # 目标
@@ -23,6 +25,11 @@ GitHub：https://github.com/PatrickRoot/MovieRecorder
 - [ ] 完成电视剧·进度更新
 
 **服务器端：**
+服务器端代码放到了 sixlab-web 项目中，代码：
+
+码云：https://gitee.com/nianqinianyi/sixlab-web
+
+GitHub：https://github.com/PatrickRoot/sixlab-web
 
 - [ ] 完成代码初始化，基本的依赖和配置完成
 - [ ] 完成登录功能开发
@@ -33,12 +40,15 @@ GitHub：https://github.com/PatrickRoot/MovieRecorder
 - [ ] 完成电视剧·更新进度接口的开发
 
 # 使用到的技术&开源技术
+
+APP 端用到的技术：
+
 1. [react-native](https://github.com/facebook/react-native)
 2. [antd-mobile](https://mobile.ant.design/index-cn)
 3. [react-navigation](https://github.com/react-community/react-navigation)
 4. [redux](https://github.com/reactjs/redux)
 5. [moment](https://github.com/moment/moment/)
-5. [个推推送](https://github.com/GetuiLaboratory/react-native-getui)
+6. [个推推送](https://github.com/GetuiLaboratory/react-native-getui)
 
 # 旧版本
 

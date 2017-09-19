@@ -23,9 +23,9 @@ import {CHECK_LOGIN_URL, LOGIN_URL} from "../constants/urls";
  * @returns {*}
  */
 export function checkLogin() {
-    let accessToken = globalStore.getState().UserStore.user.accessToken;
+    let token = globalStore.getState().UserStore.user.token;
     
-    if (accessToken) {
+    if (token) {
         return (dispatch) => {
             dispatch({'type': TYPES.CHECK_LOGIN_ING});
             

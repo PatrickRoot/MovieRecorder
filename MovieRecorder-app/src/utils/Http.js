@@ -39,14 +39,14 @@ export function doGet(url, callback, needAuth) {
 }
 
 function doFetch(url, options, callback, needAuth) {
-    let accessToken = "";
+    let token = "";
     if(needAuth){
-        accessToken = globalStore.getState().UserStore.user.accessToken;
+        token = globalStore.getState().UserStore.user.token;
     }
     
     var fetchOptions = {
         headers: {
-            'accessToken': accessToken,
+            'accessToken': token,
             'client': ClientInfo.clientOs,
             'clientVersion': ClientInfo.clientVersion,
             'version': ClientInfo.appVersion,
@@ -75,7 +75,7 @@ function doFetch(url, options, callback, needAuth) {
             callback({
                 success: false,
                 code: -1,
-                message: err,
+                message: err.message,
             })
         })
         .done();

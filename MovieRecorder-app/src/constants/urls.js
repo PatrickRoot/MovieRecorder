@@ -10,5 +10,7 @@
  * @time: 2017/9/14 22:36
  * @author: Patrick <root@sixlab.cn>
  */
-export const CHECK_LOGIN_URL = "https://api.sixlab.cn/loginStatus";
-export const LOGIN_URL = "https://api.sixlab.cn/login";
+export const CHECK_LOGIN_URL = "https://sixlab.cn/api/checkLogin";
+export const LOGIN_URL = "https://sixlab.cn/api/pub/login";
+
+

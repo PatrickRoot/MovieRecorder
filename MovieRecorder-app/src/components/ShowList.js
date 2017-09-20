@@ -10,3 +10,30 @@
  * @time: 2017/9/15 15:07
  * @Author: Patrick <root@sixlab.cn>
  */
+import React, {Component} from 'react';
+import {
+    ListView,
+} from 'react-native';
+
+class ShowList extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {};
+    }
+
+    render() {
+        return (
+            <ListView>
+
+            </ListView>
+        )
+    }
+}
+
+function select(store) {
+    return {
+        showData:store.ShowStore.showData
+    }
+}
+
+export default connect(select)(ShowList);

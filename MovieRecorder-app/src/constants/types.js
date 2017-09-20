@@ -29,3 +29,6 @@ export const FIRST_LIST_LOADING = 'FIRST_LIST_LOADING';
 export const FIRST_LIST_NO_MORE = 'FIRST_LIST_NO_MORE';
 export const FIRST_LIST_ERROR = 'FIRST_LIST_ERROR';
 export const FIRST_LIST_LOAD_DONE = 'FIRST_LIST_LOAD_DONE';
+
+export const FILM_LOAD = 'FILM_LOAD';
+export const SHOW_LOAD = 'SHOW_LOAD';

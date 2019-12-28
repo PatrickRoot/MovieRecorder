@@ -4,7 +4,7 @@
 
 码云：https://gitee.com/nianqinianyi/MovieRecorder
 
-GitHub：https://github.com/PatrickRoot/MovieRecorder
+GitHub：https://github.com/nianqinianyi/MovieRecorder
 
 # 目标
 实现一个跨平台的 app，记录电影、电视剧的观看进度，数据存储在服务器，目前暂定仍由服务器提供几个接口，存储在 MySQL 数据库中。
@@ -29,7 +29,7 @@ GitHub：https://github.com/PatrickRoot/MovieRecorder
 
 码云：https://gitee.com/nianqinianyi/sixlab-web
 
-GitHub：https://github.com/PatrickRoot/sixlab-web
+GitHub：https://github.com/nianqinianyi/sixlab-web
 
 - [ ] 完成代码初始化，基本的依赖和配置完成
 - [ ] 完成登录功能开发
@@ -52,7 +52,7 @@ APP 端用到的技术：
 
 # 旧版本
 
-之前的旧版本放到了分支[archinve](https://github.com/PatrickRoot/MovieRecorder/tree/archive)以作纪念，旧版本内容：
+之前的旧版本放到了分支[archinve](https://github.com/nianqinianyi/MovieRecorder/tree/archive)以作纪念，旧版本内容：
 1. Java 实现的电影记录，主要用到：Swing、Mybatis 和 sqlite
 2. Python3 实现的第二版电影记录，主要用到：PyQt4、sqlite
 3. Python3 实现的电视剧记录，主要用到：PyQt4、sqlite
